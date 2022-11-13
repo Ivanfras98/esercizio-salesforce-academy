@@ -10,11 +10,12 @@ $("form").submit((event) => {
     if (data.length > 0) {
       data.forEach((e) => {
         sessionStorage.setItem("UserId", JSON.stringify(e));
-        $("#span").text("You have logged in, wait few seconds").show().fadeOut(700);
+        // $("#span")
+        //   .text("You have logged in, wait few seconds")
+        //   .show()
+        //   .fadeOut(700);
       });
-      setTimeout(() => {
-        location.replace("http://127.0.0.1:5500/AddNotes/index.html");
-      }, 700);
+      location.replace("http://127.0.0.1:5500/AddNotes/index.html");
     } else throw Error("Wrong datas");
   }
   getData().catch((e) => $("#span").text(e).show().fadeOut(2000));
